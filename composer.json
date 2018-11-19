@@ -1,0 +1,31 @@
+{
+    "name": "fobia/laravel-camelcase-relationship",
+    "description": "Laravel camelcase relationship.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "laravel"
+    ],
+    "authors": [
+        {
+            "name": "Dmitriy Tyurin",
+            "email": "fobia3d@gmail.com"
+        }
+    ],
+    "require": {
+        "illuminate/support": "~5.4",
+        "illuminate/database": "~5.4"
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-0": {
+            "Fobia\\Relationship\\": "./"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
