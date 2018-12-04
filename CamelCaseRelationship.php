@@ -119,7 +119,9 @@ trait CamelCaseRelationship
                     $value = static::camelCaseAttributeString($value);
                 }
             } else {
-                $key = static::camelCaseAttributeString($key);
+                if (is_string($key)) {
+                    $key = static::camelCaseAttributeString($key);
+                }
             }
 
             $results[$key] = $value;
@@ -142,7 +144,7 @@ trait CamelCaseRelationship
      */
     protected static function camelCaseAttributeString(string $relation) : string
     {
-        if (strpos($relation, ' ') !== false) {
+        if (strpos($relation, ' ') !== false || strpos($relation, '_') === false) {
             return $relation;
         }
 

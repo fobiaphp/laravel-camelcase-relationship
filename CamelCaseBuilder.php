@@ -3,6 +3,7 @@
 namespace Fobia\Relationship;
 
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Str;
 
 /**
  * Class CamelCaseBuilder
@@ -16,8 +17,8 @@ class CamelCaseBuilder extends Builder
     public function with($relations)
     {
         $relations = array_map(function ($key) {
-            if (strpos($key, '_') !== false) {
-                $key = camel_case($key);
+            if (is_string($key) && strpos($key, '_') !== false) {
+                $key = Str::camel($key);
             }
             return $key;
         }, is_string($relations) ? func_get_args() : $relations);
@@ -31,8 +32,8 @@ class CamelCaseBuilder extends Builder
     public function without($relations)
     {
         $relations = array_map(function ($key) {
-            if (strpos($key, '_') !== false) {
-                $key = camel_case($key);
+            if (is_string($key) && strpos($key, '_') !== false) {
+                $key = Str::camel($key);
             }
             return $key;
         }, is_string($relations) ? func_get_args() : $relations);
