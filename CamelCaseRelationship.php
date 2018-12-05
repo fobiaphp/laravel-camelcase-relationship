@@ -56,7 +56,7 @@ trait CamelCaseRelationship
      */
     public function getRelationValue($key)
     {
-        if (strpos($key, '_') !== false) {
+        if (strpos($key, '_') !== false && !method_exists($this, $key)) {
             $key = camel_case($key);
         }
         return parent::getRelationValue($key);
