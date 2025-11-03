@@ -3,7 +3,7 @@ laravel-camelcase-relationship
 
 Позволяет обращаться к отношением модели и загружать их лениво по snake_case синтаксису
 
-В оригинале, к отношениям можно оброщаться так же ка определен метод отношений. Медоты, как правило, именованы стилем camel_case.
+В оригинале, к отношениям можно оброщаться так же как определен метод отношений. Медоты, как правило, именованы стилем camelCase.
 Однако при конвертации в масив, все поля преобразуются в snake_case
 
 
@@ -66,9 +66,9 @@ class Company extends Model
 
 $company = App\Company::first();
 $company->legal_form;         // App\LegalForm {#}
-$company->load('legal_form'); // App\Models\Company {#}
+$company->load('legal_form'); // App\Models\LegalForm {#}
 
-$company->loadMissing('legal_form'); // App\Company {#}
+$company->loadMissing('legal_form'); // App\LegalForm {#}
 
 // Поддерживается вложенная загрузка отношений
 $company->load('legal_form:id'); // convert => legalForm:id

@@ -16,19 +16,33 @@
         }
     ],
     "require": {
-        "illuminate/support": "~5.4",
-        "illuminate/database": "~5.4"
+        "illuminate/support": "^6.0|^7.0|^8.0|^9.0|^10.0|^11.0|^12.0",
+        "illuminate/database": "^6.0|^7.0|^8.0|^9.0|^10.0|^11.0|^12.0"
     },
     "require-dev": {
+        "mockery/mockery": "^1.0",
+        "orchestra/testbench": "^4.0|^5.0|^6.0|^7.0|^8.0|^9.0|^10.0",
+        "phpstan/phpstan": "^1.12.23",
+        "phpunit/phpunit": "^8.0|^9.3|^10.4|^11.5"
     },
     "autoload": {
         "psr-0": {
             "Fobia\\Relationship\\": "./"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Fobia\\Relationship\\Tests\\": "tests/"
+        }
+    },
     "extra": {
         "branch-alias": {
             "dev-master": "1.0-dev"
         }
-    }
+    },
+        "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

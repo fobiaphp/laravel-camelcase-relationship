@@ -26,9 +26,9 @@ namespace Fobia\Relationship;
  *
  * Этот трейд позволяет обращать к отношениям синтаксисом snake_case
  *
- * $c = App\Models\Company::first();
- * $c->legal_form;         // App\Models\LegalForms\LegalForm {#}
- * $c->load('legal_form'); // App\Models\Company {#}
+ * $c = App\Models\LegalForm::first();
+ * $c->legal_form;         // App\Models\LegalForm {#}
+ * $c->load('legal_form'); // App\Models\LegalForm {#}
  */
 trait CamelCaseRelationship
 {
